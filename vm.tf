@@ -1,5 +1,6 @@
 resource "proxmox_vm_qemu" "cluster_vm" {
   name        = var.vm_config.name
+  agent       = 1
   vmid        = var.vm_config.vmid
   target_node = var.vm_config.target_node
   clone       = var.vm_config.clone
