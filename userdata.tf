@@ -1,5 +1,5 @@
 resource "local_file" "cluster_userdata" {
-  filename = "${path.module}/files/user_data_${var.vm_config.name}.yaml"
+  filename = "${path.module}/files/user_data_${var.vm_name}.yaml"
   content  = var.userdata_content
   connection {
     type     = "ssh"
@@ -8,7 +8,7 @@ resource "local_file" "cluster_userdata" {
     host     = var.proxmox_ssh_config.ssh_host
   }
   provisioner "file" {
-    destination = "/var/lib/vz/snippets/user_data_${var.vm_config.name}.yaml"
+    destination = "/var/lib/vz/snippets/user_data_${var.vm_name}.yaml"
     content     = var.userdata_content
   }
 }

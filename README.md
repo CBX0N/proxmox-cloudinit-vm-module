@@ -76,7 +76,6 @@ object({
     bridge             = optional(string, "vmbr0")
     disk_location      = string
     cloudinit_location = optional(string, "local-lvm")
-    userdata_location  = string
   })
 ```
 
