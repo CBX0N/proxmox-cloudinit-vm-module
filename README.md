@@ -24,6 +24,12 @@ The following resources are used by this module:
 
 The following input variables are required:
 
+### <a name="input_ip_config"></a> [ip\_config](#input\_ip\_config)
+
+Description: n/a
+
+Type: `string`
+
 ### <a name="input_proxmox_ssh_config"></a> [proxmox\_ssh\_config](#input\_proxmox\_ssh\_config)
 
 Description: n/a
@@ -44,6 +50,12 @@ Description: n/a
 
 Type: `string`
 
+### <a name="input_userdata_location"></a> [userdata\_location](#input\_userdata\_location)
+
+Description: n/a
+
+Type: `string`
+
 ### <a name="input_vm_config"></a> [vm\_config](#input\_vm\_config)
 
 Description: n/a
@@ -52,8 +64,6 @@ Type:
 
 ```hcl
 object({
-    name               = string
-    vmid               = string
     memory             = optional(number, 4096)
     balloon            = optional(number, 4096)
     cores              = optional(number, 4)
@@ -61,7 +71,6 @@ object({
     disk_size_gb       = optional(number, 40)
     os_type            = optional(string, "cloud-init")
     clone              = string
-    ip_config          = string
     target_node        = optional(string, "pve")
     nic                = optional(string, "virtio")
     bridge             = optional(string, "vmbr0")
@@ -70,4 +79,16 @@ object({
     userdata_location  = string
   })
 ```
+
+### <a name="input_vm_name"></a> [vm\_name](#input\_vm\_name)
+
+Description: n/a
+
+Type: `string`
+
+### <a name="input_vmid"></a> [vmid](#input\_vmid)
+
+Description: n/a
+
+Type: `number`
 <!-- END_TF_DOCS -->
